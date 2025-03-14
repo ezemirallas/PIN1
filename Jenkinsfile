@@ -21,7 +21,7 @@ pipeline {
   
     stage('Run tests') {
       steps {
-        sh "sudo docker run test npm test"
+        sh "sudo docker run test npm testapp"
       }
     }
 
