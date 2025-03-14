@@ -5,7 +5,7 @@ WORKDIR /app
 ADD package.json package-lock.json /app/
 RUN npm install
 
-EXPOSE 3000
+EXPOSE 3003
 
 ADD . /app
 
