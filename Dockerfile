@@ -7,6 +7,6 @@ RUN npm install
 
 EXPOSE 3003
 
-ADD . /app
+ADD . /testapp
 
 CMD ["node", "index"]
