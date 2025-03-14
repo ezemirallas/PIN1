@@ -6,7 +6,7 @@ pipeline {
   }
 
   environment {
-    ARTIFACT_ID = "elbuo8/webapp:${env.BUILD_NUMBER}"
+    ARTIFACT_ID = "ezequielmirallas/testapp:${env.BUILD_NUMBER}"
   }
    stages {
    stage('Building image') {
@@ -24,14 +24,15 @@ pipeline {
         sh "docker run testapp npm test"
       }
     }
-   stage('Deploy Image') {
-      steps{
-        sh '''
-        docker tag testapp 127.0.0.1:5001/ezequiel/testapp
-        docker push 127.0.0.1:5001/ezequiel/testapp   
-        '''
+
+       stage('Deploy') {
+            steps {
+                script {
+                   
+                    sh 'docker run -p 5001:5001 --name testapp testapp'
+                }
+            }
         }
-      }
     }
 }
 
