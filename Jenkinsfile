@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                    
-                    sh 'docker run -it -d -p 5001:5001 testapp'
+                    sh 'docker run -it -d -p 5001:5001 --name testapp testapp'
                 }
             }
         }
